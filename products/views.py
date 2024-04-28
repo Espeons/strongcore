@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 
 from django.shortcuts import render
@@ -8,6 +9,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, CreateView
 
 from products.models import Trainer, Product, Cart, CartItem, Contact
+from strongcore import settings
 
 
 class TrainerListView(LoginRequiredMixin, ListView):
@@ -68,6 +70,6 @@ def checkout_view(request):
     open_cart = get_open_cart(request)
     open_cart.status = 'closed'
     open_cart.save()
-    # send email
+    send_mail(subject='subiect', message='mesaj', from_email=settings.EMAIL_HOST_USER , recipient_list=[settings.EMAIL_HOST_USER,open_cart.user.email], fail_silently=False)
     return redirect(request.META.get('HTTP_REFERER'))
 

@@ -135,8 +135,9 @@ LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'mail.aplicatiedjango.ro'
-EMAIL_HOST_USER = 'ro56@aplicatiedjango.ro'
-EMAIL_HOST_PASSWORD = 'Django1234!'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'samsonovicieduard@gmail.com'
+EMAIL_HOST_PASSWORD = 'gmgm spqa eklv ufdh'
 EMAIL_PORT = 587
-DEFAULT_FROM_EMAIL = 'ro56@aplicatiedjango.ro'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'samsonovicieduard@gmail.com'

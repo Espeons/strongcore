@@ -7,7 +7,8 @@
 
 {% block content %}
 
-    <header class="masthead" xmlns:padding="http://www.w3.org/1999/xhtml">
+    <header class="masthead" xmlns:padding="http://www.w3.org/1999/xhtml"
+            xmlns:padding-left="http://www.w3.org/1999/xhtml">
         <div class="container">
             <div class="masthead-subheading">Cosul Tau De Cumparaturi</div>
             <div class="masthead-heading text-uppercase">Toate Produsele Sunt Listate Mai Jos</div>
@@ -41,8 +42,9 @@
                 </div>
             {% empty %}
                 
-                
-                
+                <div class="col-md-4">
+                    <img src="{% static 'assets/img/empty_cart.png' %}" alt="..." height="800" width="800" />
+                </div>
             {% endfor %}
         
 {#         {% for cart_item in cart.cartitem_set.all %}#}
@@ -54,10 +56,10 @@
             {#        </div>#}
         </div>
     </div>
-    <div class="container"  padding-top: 50px;
+    <div class="container"  style="padding-top: 50px;
   padding-bottom: 20px;
   padding-left: 30px;
-  padding-right: 40px;>
+  padding-right: 40px;">
     
        
     <form action="{% url 'checkout_view' %}" method="post">
